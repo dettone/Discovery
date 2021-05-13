@@ -4,7 +4,9 @@ const routes = require('./routes')
 //habilitar arquivos estaticos
 
 server.use(express.static('public'));
-server.use(routes)
+server.use(routes);
+
+server.set('view engine', 'ejs')
 
 server.get('/',(request, response)=>{
     return response.sendFile(__dirname+"/views/index.html")
